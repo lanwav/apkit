@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# AvrStudio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "ant_kit", "ant_kit\ant_kit.cproj", "{847BEACE-EF5C-4CF7-8A9F-1E913A813A06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{847BEACE-EF5C-4CF7-8A9F-1E913A813A06}.Debug|AVR.ActiveCfg = Debug|AVR
+		{847BEACE-EF5C-4CF7-8A9F-1E913A813A06}.Debug|AVR.Build.0 = Debug|AVR
+		{847BEACE-EF5C-4CF7-8A9F-1E913A813A06}.Release|AVR.ActiveCfg = Release|AVR
+		{847BEACE-EF5C-4CF7-8A9F-1E913A813A06}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

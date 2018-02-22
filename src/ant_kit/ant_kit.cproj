@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>5.1</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{847beace-ef5c-4cf7-8a9f-1e913a813a06}</ProjectGuid>
+    <avrdevice>ATmega88A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>ant_kit</AssemblyName>
+    <Name>ant_kit</Name>
+    <RootNamespace>ant_kit</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <AsfVersion>2.11.1</AsfVersion>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolinterface>
+    </avrtoolinterface>
+    <com_atmel_avrdbg_tool_ispmk2>
+      <ToolType>com.atmel.avrdbg.tool.ispmk2</ToolType>
+      <ToolName>AVRISP mkII</ToolName>
+      <ToolNumber>0000B0025368</ToolNumber>
+      <Channel>
+        <host>127.0.0.1</host>
+        <port>49211</port>
+        <ssl>False</ssl>
+      </Channel>
+      <ToolOptions>
+        <InterfaceName>JTAG</InterfaceName>
+        <InterfaceProperties>
+          <JtagDbgClock>1000000</JtagDbgClock>
+          <JtagProgClock>1000000</JtagProgClock>
+          <IspClock>150000</IspClock>
+          <JtagInChain>false</JtagInChain>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagDevicesBefore>0</JtagDevicesBefore>
+          <JtagDevicesAfter>0</JtagDevicesAfter>
+          <JtagInstrBitsBefore>0</JtagInstrBitsBefore>
+          <JtagInstrBitsAfter>0</JtagInstrBitsAfter>
+        </InterfaceProperties>
+      </ToolOptions>
+    </com_atmel_avrdbg_tool_ispmk2>
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolType>com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolName>AVR Simulator</ToolName>
+      <ToolNumber>
+      </ToolNumber>
+      <Channel>
+        <host>127.0.0.1</host>
+        <port>53796</port>
+        <ssl>False</ssl>
+      </Channel>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-g2)</avrgcc.assembler.debugging.DebugLevel>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ant\antdefines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ant\antplus.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ant\ant_frame.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ant\ant_frame.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ant\ant_messages.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ant\ant_types.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ant_kit.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_ant.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_ant_mega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_avr.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_config.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_debug_mega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_debug.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_clock_mega.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="cyg_clock.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lc-addrlabels.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lc-switch.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="lc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pt-sem.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pt-timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pt-timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pt.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ant" />
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
